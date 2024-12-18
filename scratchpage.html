@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Page Demo</title>
+    <!-- Link to Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="main-body bg-black">
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-link2">Main Page</a> |
+        <a href="scratchpage.html" class="nav-link2">Scratch Page</a> |
+        <a href="jokegenerator.html" class="nav-link2">Tennis Joke Generator</a>
+    </nav>   
+    
+    <a href="#list-section" class="nav-link2">Why Tennis?</a> |
+    <a href="#tableau-section" class="nav-link2">Grand Slam Graph</a> |
+    <a href="#image-section" class="nav-link2">Roger Federer Pic</a> |
+    <a href="#video-section" class="nav-link2">Epic Rally Video</a>
+    
+<!-- Main Content Section -->
+<main class="main-content"> 
+    
+    <!-- Ordered List with Embedded Unordered List Section -->
+    <section id="list-section" class="content-section">
+        <h1 id="why tennis?" class="main-body nav-menu">Why Tennis is the Greatest Sport in the World</h1>
+        <h2 class="section-title">Here are the reasons</h2>
+        <ol>
+            <li class="fw-bolder">Fun
+                <ul>
+                    <li class="fw-light">There is nothing better that hittin the ball with heavy topspin</li>
+                    <li class="fw-light">The best is when you get into a rally that last hundreds of shots long during practice.</li>
+                </ul>
+            </li>
+            <li class="fw-bolder">Control
+                <ul>
+                    <li class="fw-light">Because you are the only other person on your side of the net winning and losing are 100% your responsiblity.</li>
+                    <li class="fw-light">There isn't really referees in the game to. Sometimes you get bad calls about whether or not the ball was in or not, but that is very rare.</li>
+                </ul>
+            </li>
+            <li class="fw-bolder">Health
+                <ul>
+                    <li class="fw-light">Tennis players live longer than most because it activates the cerebellum which deals with motor skills. This increases health long-term </li>
+                    <li class="fw-light">It is one of the few sports that you can play for a long time because of the lack of physical contact that you see in football.</li>
+                </ul>
+            </li>
+        </ol>
+    </section>
+
+<!-- Tableau Graph Section -->
+<section id="tableau-section" class="content-section">
+    <h2 class="section-title">Grand Slam Dashboard</h2>
+    <h4>Here is a dashboard for all the grand slam champions in tennis since 1968 to 2020</h4>
+
+    <!-- Tableau Embed Code -->
+    <div class='tableauPlaceholder' id='viz1734399458691' style='position: relative'>
+        <noscript>
+            <a href='#'><img alt='Grand Slam Dashboard' src='https://public.tableau.com/static/images/6F/6FTRKF75J/1_rss.png' style='border: none' /></a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+            <param name='embed_code_version' value='3' /> 
+            <param name='path' value='shared&#47;6FTRKF75J' /> 
+            <param name='toolbar' value='no' />
+            <param name='static_image' value='https://public.tableau.com/static/images/6F/6FTRKF75J/1.png' /> 
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+        </object>
+    </div>
+
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1734399458691');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '1000px';
+            vizElement.style.height = '800px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '1000px';
+            vizElement.style.height = '800px';
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '1300px';
+        }
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+
+</section>
+
+    <!-- Image Section -->
+    <section id="image-section" class="content-section">
+        <h2 class="section-title">This is one of the GOATs of Tennis - Roger Federer</h2>
+        <img src="assets/rogerwimb1.jpg" alt="Example Image" class="custom-image" height="50px">
+    </section>
+
+    <section id="video-section" class="content-section footer">
+        <h2>Roger Federer Epic Rally</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/cDv6uCyq8OE?si=2ocS-vOOA8f_L1oM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+</main>
+
+<!-- Footer Section -->
+<div class="footer">
+    <p>&copy; 2024 Matthew Landon</p>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="nav-link2">Main Page</a> |
+        <a href="scratchpage.html" class="nav-link2">Scratch Page</a> |
+        <a href="jokegenerator.html" class="nav-link2">Tennis Joke Generator</a>
+    </nav>   
+    
+    <section id="joke-section" class="content-section">
+        <h2 class="section-title">AI-Powered Tennis Joke Generator</h2>
+        <button id="generate-joke" class="joke-btn">Generate Joke</button>
+        <p id="joke-display" class="joke-text">Click the button to see a tennis joke!</p>
+    </section>
+
+    <script>
+        // Fetch Joke from OpenAI API
+        async function fetchTennisJoke() {
+            const apiKey = "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"; 
+
+            try {
+                const response = await fetch("https://api.openai.com/v1/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo",
+                        messages: [{ role: "user", content: "Tell me a funny tennis-related joke." }],
+                        max_tokens: 60,
+                        temperature: 0.7
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    document.getElementById("joke-display").textContent = data.choices[0].message.content.trim();
+                    showResetButton();
+                } else {
+                    throw new Error(data.error.message || "API request failed.");
+                }
+            } catch (error) {
+                console.error("Error fetching joke:", error);
+                document.getElementById("joke-display").textContent = "Oops! Something went wrong.";
+            }
+        }
+
+        // Attach Event Listener
+        document.getElementById("generate-joke").addEventListener("click", fetchTennisJoke);
+
+        // Function to Create and Show Reset Button
+        function showResetButton() {
+            if (!document.getElementById("reset-btn")) {
+                const resetButton = document.createElement("button");
+                resetButton.id = "reset-btn";
+                resetButton.textContent = "Reset Joke Generator";
+                resetButton.style.marginTop = "20px";
+
+                // Add Click Event to Refresh the Page
+                resetButton.addEventListener("click", () => {
+                    location.reload();  // Refresh the page
+                });
+
+                // Append the Reset Button Below the Joke
+                document.body.appendChild(resetButton);
+            }
+        }
+
+    </script>
+</body>
+</html>
